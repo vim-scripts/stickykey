@@ -1,0 +1,51 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=2990
+
+latest version at http://github.com/tyru/stickykey.vim/
+
+
+This plugin provides Sticky Key to you.
+With Sticky Key, you can emulate <C-o> by ";o".
+(In this case, <Plug>(stickykey-ctrl) is mapped to ";")
+
+And I suppose you are using GNU screen :)
+Inputting screen's hotkey is a little complicated.
+But you can send key input to screen fastly, certainly, and easily.
+
+
+
+MAPPINGS
+
+<Plug>(stickykey-...-remap) works like recursive mapping.
+
+
+<Plug>(stickykey-ctrl)
+<Plug>(stickykey-ctrl-remap)
+    Sticky key for |ctrl|.
+
+<Plug>(stickykey-alt)
+<Plug>(stickykey-alt-remap)
+    Sticky key for |alt|.
+
+<Plug>(stickykey-shift)
+<Plug>(stickykey-shift-remap)
+    Sticky key for |shift|.
+
+<Plug>(stickykey-command)
+<Plug>(stickykey-command-remap)
+    Sticky key for Macintosh command key. (see |<D-|)
+
+
+VARIABLES
+
+g:stickykey_when_no_escaped_key			string (default: "thru")
+    This variables determines when stickykey can not find
+    escaped input with meta key.
+    For e.g., while waiting the next key after pressing
+    "<Plug>(stickykey-ctrl)", <C-o> is input.
+    This variable can be any one of those:
+        "nop":
+            Behave like no key is input.
+        "thru":
+            Execute key without escaping with meta key.
+        "again":
+            Dispose current key input, wait next input again.
